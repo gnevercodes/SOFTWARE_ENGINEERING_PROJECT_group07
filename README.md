@@ -7,3 +7,9 @@
 # Frontend : HTML , CSS , Javascript 
 # Backend : Java,python,php
 # database languages : ORACLE SQL,MySQL.
+
+
+VivekNelluri and skills I would bring are 
+# frontend : HTML , Javascript
+#backend : Python , R
+#database : SQL , MYSQL 
