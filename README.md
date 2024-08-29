@@ -31,3 +31,9 @@ Skills:
 # Frontend : Javascript, HTML. 
 # Backend : Python, Java. 
 # Database : SQL. 
+
+Vishnu Priya Vulichi
+Skills:
+# Frontend : HTML, CSS, Typescript
+# Backend : C#, Python, php. 
+# Database : SQL, DBMS. 
