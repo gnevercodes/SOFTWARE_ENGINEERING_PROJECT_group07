@@ -21,8 +21,7 @@ My Skills:
 # database languages : SqlServer,MySQL.
 # Other: PowerBI, Tableau
 
-Shabana Syed
-My Skills:
+Shabana Syed, My skills are
 # Frontend : HTML , CSS ,Javascript
 # Backend : Java,python
 # database languages : ORACLE ,MySQL
