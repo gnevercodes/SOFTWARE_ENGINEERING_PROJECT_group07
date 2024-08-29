@@ -25,3 +25,9 @@ Shabana Syed, My skills are
 # Frontend : HTML , CSS ,Javascript
 # Backend : Java,python
 # database languages : ORACLE SQL,MySQL
+
+Ajay Kumar Reddy Sammeta 
+Skills:
+# Frontend : Javascript, HTML. 
+# Backend : Python, Java. 
+# Database : SQL. 
