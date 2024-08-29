@@ -24,4 +24,4 @@ My Skills:
 Shabana Syed, My skills are
 # Frontend : HTML , CSS ,Javascript
 # Backend : Java,python
-# database languages : ORACLE ,MySQL
+# database languages : ORACLE SQL,MySQL
