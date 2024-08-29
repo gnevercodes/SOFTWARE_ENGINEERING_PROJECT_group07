@@ -13,3 +13,10 @@ VivekNelluri and skills I would bring are
 # frontend : HTML , Javascript
 # backend : Python , R
 # database : SQL , MYSQL 
+
+I am Rishika Kandrigal 
+My Skills:
+# Frontend : HTML , CSS , jQuery
+# Backend : Java,python
+# database languages : SqlServer,MySQL.
+# Other: PowerBI, Tableau
