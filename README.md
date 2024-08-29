@@ -11,5 +11,5 @@
 
 VivekNelluri and skills I would bring are 
 # frontend : HTML , Javascript
-#backend : Python , R
-#database : SQL , MYSQL 
+# backend : Python , R
+# database : SQL , MYSQL 
