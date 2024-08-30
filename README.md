@@ -37,3 +37,11 @@ Skills:
 # Frontend : HTML, CSS, Typescript
 # Backend : C#, Python, php. 
 # Database : SQL, DBMS. 
+
+
+pranav chalasani
+skills:
+# backend: python
+# Database : SQL, DBMS, Mysql
+# testing(selenium, waterfall)
+
