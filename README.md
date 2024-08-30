@@ -45,3 +45,10 @@ skills:
 # Database : SQL, DBMS, Mysql
 # testing(selenium, waterfall)
 
+I am Md Ariful Hasan
+My Skills are:
+# Frontend : HTML , CSS , javaScript
+# Backend : Java
+# database languages : PostgreSQL.
+# Requirement Analysis
+
