@@ -1,0 +1,4 @@
+# here this text file points out to the directory information of the files that are submitted for deliverable-1
+
+## THis is Deliverable-1 
+# this includes a Deliverable-1(TEAMDELTA).docx file and a TeamDelta-del-1.pptx file which is located in 
