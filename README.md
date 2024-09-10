@@ -1,3 +1,10 @@
+## Team Delta
+
+## eMed-a complete pharmacy cart at your door-step
+
+## Description
+
+The Aim of our eHealth website is to bridge the gap between patients and health care Facilities. As we know it is a difficult task to bridge the gap between them. Our project aims to provide a seamless -user interface with all the information a user needs such as Booking Doctor appointments, blood donors information and ordering medicines online through safe and secure gateways. We will be using MongoDB to store all the data related to patients and health care facilities. Along with that, we will be using a wide number of programming languages like HTML, CSS, JavaScript, other frameworks etc. to have a built-in security integration into our website.
 ## Directory structure
 ├── Backend/            # Contains the backend code and configuration files
 #
