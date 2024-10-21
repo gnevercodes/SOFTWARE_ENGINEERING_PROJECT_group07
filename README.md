@@ -12,28 +12,51 @@ emedical
 ├── node_modules/                # Node.js dependencies
 
 ├── public/                      # Public directory for static assets
+
 │
+
 ├── src/                         # Source code
+
 │   ├── backend/                 # Backend server code
+
 │   │   └── server.js            # Main server file
+
 │   ├── frontend/                # Frontend code
+
 │   │   ├── assets/              # Assets like images
+
 │   │   │   ├── appointment.png
+
 │   │   │   ├── docVisit.png
+
 │   │   │   ├── order medicines.png
+
 │   │   │   ├── output.json
+
 │   │   │   ├── output100.json
+
 │   │   │   ├── pro.jpg
+
 │   │   ├── components/          # React components
+
 │   │   │   ├── carousel.js
+
 │   │   │   ├── cart.js
+
 │   │   │   ├── docAppointment.js
+
 │   │   │   ├── landingPage.js
+
 │   │   │   ├── login.js
+
 │   │   │   ├── medicines.js
+
 │   │   │   ├── swiper.js
+
 │   │   │   └── userContext.js
+
 │   │   ├── styling/             # CSS styles for components
+
 │   │   │   ├── appointment.css
 │   │   │   ├── carousel.css
 │   │   │   ├── cart.css
