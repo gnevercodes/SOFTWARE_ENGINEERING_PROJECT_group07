@@ -1,0 +1,49 @@
+.carousel-container {
+  max-width: 500px;
+  margin: 50px auto; /* Center the carousel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
+  border-radius: 15px;
+  overflow: hidden; /* Ensures child elements stay inside the rounded border */
+  background-color: #f7f7f7; /* Light background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel .slide {
+  width: 300px;
+  background: none;
+}
+
+.testimonial-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-top: 30px;
+  color: #555;
+  width: 300px;
+  /* margin-bottom: 20px; */
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #333;
+}
+
+.carousel .control-arrow {
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+  background-color: red;
+}
+
+.carousel .control-arrow:hover {
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: none;
+}
