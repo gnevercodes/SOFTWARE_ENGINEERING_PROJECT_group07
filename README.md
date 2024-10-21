@@ -8,7 +8,9 @@ The Aim of our eHealth website is to bridge the gap between patients and health 
 ## Directory structure
 emedical
 │
+
 ├── node_modules/                # Node.js dependencies
+
 ├── public/                      # Public directory for static assets
 │
 ├── src/                         # Source code
