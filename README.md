@@ -6,33 +6,51 @@
 
 The Aim of our eHealth website is to bridge the gap between patients and health care Facilities. As we know it is a difficult task to bridge the gap between them. Our project aims to provide a seamless -user interface with all the information a user needs such as Booking Doctor appointments, blood donors information and ordering medicines online through safe and secure gateways. We will be using MongoDB to store all the data related to patients and health care facilities. Along with that, we will be using a wide number of programming languages like HTML, CSS, JavaScript, other frameworks etc. to have a built-in security integration into our website.
 ## Directory structure
-├── Backend/            # Contains the backend code and configuration files
-#
-├── [backend files and subdirectories]
-# 
-├── Frontend/           # Contains the frontend code and assets
-#   
-├── [frontend files and subdirectories]
-# 
-├── images/             # Folder for project images and visual assets
-#  
-├── [image files]
-# 
+emedical/
 │
-# 
-├── uploads/            # Folder for uploaded files
-# 
-├── [uploaded files]
-# 
-├── .env                # Environment variables configuration (not included in version control)
-# 
-├── .gitignore           # Specifies files and directories to be ignored by Git
-# 
-├── README.md            # This file
-# 
-├── package-lock.json    # Dependency lock file for npm
-# 
-├── package.json         # Project metadata and dependencies configuration
+├── node_modules/                # Node.js dependencies
+├── public/                      # Public directory for static assets
+│
+├── src/                         # Source code
+│   ├── backend/                 # Backend server code
+│   │   └── server.js            # Main server file
+│   ├── frontend/                # Frontend code
+│   │   ├── assets/              # Assets like images
+│   │   │   ├── appointment.png
+│   │   │   ├── docVisit.png
+│   │   │   ├── order medicines.png
+│   │   │   ├── output.json
+│   │   │   ├── output100.json
+│   │   │   ├── pro.jpg
+│   │   ├── components/          # React components
+│   │   │   ├── carousel.js
+│   │   │   ├── cart.js
+│   │   │   ├── docAppointment.js
+│   │   │   ├── landingPage.js
+│   │   │   ├── login.js
+│   │   │   ├── medicines.js
+│   │   │   ├── swiper.js
+│   │   │   └── userContext.js
+│   │   ├── styling/             # CSS styles for components
+│   │   │   ├── appointment.css
+│   │   │   ├── carousel.css
+│   │   │   ├── cart.css
+│   │   │   ├── landingPage.css
+│   │   │   ├── login.css
+│   │   │   ├── medicines.css
+│   │   │   └── swiper.css
+│   │   ├── App.css              # Main application styles
+│   │   ├── App.js               # Main application component
+│   │   ├── App.test.js          # Tests for App component
+│   │   ├── index.js             # Main entry point for React
+│   │   ├── logo.svg             # Application logo
+│   │   ├── reportWebVitals.js   # Performance monitoring
+│   │   └── setupTests.js        # Test setup file
+│
+├── .gitignore                   # Git ignore file
+├── package-lock.json            # Dependency lock file
+├── package.json                 # NPM dependencies and scripts
+└── README.md                    # Project description and documentation
 
 ## Objective
 Our goal is to make an eHealth Pharmacy platform that comes with a simple yet responsive layout that can be beneficial. Here are some of the objectives we will be achieving at the end of our project.
