@@ -103,42 +103,53 @@ app.post("/api/signup", async (req, res) => {
     });
 
     await newUser.save();
-    console.log(newUser, "NU");
     res.status(201).json({ message: "User registered successfully!" });
   } catch (error) {
-    console.error("Signup error:", error); // Log the error for debugging
+    console.error("Signup error:", error);
     res.status(500).json({ error: "Signup failed." });
   }
 });
 
-// Login Route
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    console.log("Attempting login for email:", email);
+
     const user = await User.findOne({ email });
+    console.log("User found:", user);
 
     if (!user) {
+      console.log("User not found");
       return res.status(400).json({ error: "Invalid email or password." });
     }
 
     // Check password
     const isPasswordValid = await bcrypt.compare(password, user.password);
+    console.log("Password valid:", isPasswordValid);
+
     if (!isPasswordValid) {
+      console.log("Password incorrect");
       return res.status(400).json({ error: "Invalid email or password." });
     }
 
-    // Respond with user information (omit sensitive data)
+    // If successful, respond with user information
     res.json({
       message: "Login successful",
       user: { user },
     });
   } catch (error) {
+    console.error("Login error:", error);
     res.status(500).json({ error: "Login failed." });
   }
 });
 
+// Export the app for testing purposes
+module.exports = app;
+
 // Start Server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
