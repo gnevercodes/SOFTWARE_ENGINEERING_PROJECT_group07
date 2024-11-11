@@ -10,7 +10,21 @@ import {
 } from "react-router-dom";
 import MedicinePage from "./frontend/components/medicines.js";
 import React, { useState } from "react";
-import DoctorAppointment from "./frontend/components/docAppointment.js";
+import DoctorAppointment from "./frontend/components/userDocAppointment.js";
+import RoleSelection from "./frontend/components/roleSelection.js";
+import DoctorLandingPage from "./frontend/components/docLandingPage.js";
+import DoctorSignup from "./frontend/components/docSignUp.js";
+import DoctorLogin from "./frontend/components/docLogin.js";
+import Card from "./frontend/components/card.js";
+import UserAppointments from "./frontend/components/viewUserAppointments.js";
+import DocDoctorAppointments from "./frontend/components/Doctor-appointments.js";
+import BloodDonation from "./frontend/components/bloodDonation.js";
+import AdminLandingPage from "./frontend/components/adminLanding.js";
+import AdminUsers from "./frontend/components/adminUserList.js";
+import AdminDoctors from "./frontend/components/adminDoctors.js";
+import AdminBloodDonors from "./frontend/components/admonBD.js";
+import AdminLogin from "./frontend/components/adminLogin.js";
+import CheckoutConfirmation from "./frontend/components/chcekoutConfirmation.js";
 
 function App() {
   return (
@@ -21,10 +35,31 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/" element={<MedicalLandingPage />} />
+        {/* <Route path="/" element={<MedicalLandingPage />} /> */}
+        <Route path="/" element={<RoleSelection />} />
+        <Route path="/PatientLanding" element={<MedicalLandingPage />} />
+        <Route path="/bloodDonor" element={<BloodDonation />} />
+        <Route path="/admin" element={<AdminLandingPage />} />
+        <Route path="/admin/userList" element={<AdminUsers />} />
+        <Route path="/admin/doctors" element={<AdminDoctors />} />
+        <Route path="/admin/bloodDonors" element={<AdminBloodDonors />} />
+        <Route path="/adminLogin" element={<AdminLogin />} />
+        <Route
+          path="/checkout-confirmation"
+          element={<CheckoutConfirmation />}
+        />
+
+        <Route path="/DocLanding" element={<DoctorLandingPage />} />
+        <Route path="/DocLogin" element={<DoctorLogin />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/landing" element={<MedicalLandingPage />} />
+        <Route path="/docSignup" element={<DoctorSignup />} />
+        <Route path="/card" element={<Card />} />
         <Route path="/medicines" element={<MedicinePage />} />
+        <Route path="/userAppointments" element={<UserAppointments />} />
+        <Route path="/docDocAppointments" element={<DocDoctorAppointments />} />
+
         <Route path="/cart" element={<CartPage />} />
         <Route path="/docAppointment" element={<DoctorAppointment />} />
       </Routes>
