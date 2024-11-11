@@ -1,0 +1,91 @@
+/* card.css */
+
+.card-container {
+  --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  width: 80%;
+  max-width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  transform: translateY(-40px);
+}
+
+.card-icon {
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: #666;
+  text-align: justify;
+  margin-bottom: 1.25rem;
+}
+
+.privacy-policy-link {
+  font-weight: 600;
+  color: #634647;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.more-options-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-right: 30px;
+  transition: color 0.3s;
+}
+
+.more-options-btn:hover {
+  color: #d36569;
+}
+
+.icon-appointment {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-20px);
+  /* background-color: #fff; */
+}
+
+.accept-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #634647;
+  background-color: #eab789;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.accept-btn:hover {
+  background-color: #634647;
+  color: #eab789;
+}
