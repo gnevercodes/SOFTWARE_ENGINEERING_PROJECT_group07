@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Pagination } from "@mui/material";
+import debounce from "lodash.debounce";
 import "../styling/medicines.css";
 import output100 from "../assets/output100.json";
 
 const MedicinePage = () => {
-  const [medicines, setMedicines] = useState([]);
-  const [filteredMedicines, setFilteredMedicines] = useState([]);
+  const [medicines] = useState(output100); // Loaded once from data source
+  const [filteredMedicines, setFilteredMedicines] = useState(output100);
   const [cart, setCart] = useState(new Map());
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const itemsPerPage = 10;
   const navigate = useNavigate();
   const location = useLocation();
-  const { cartSaved } = location.state || {};
-  const { userData } = location.state || {};
+  const { cartSaved, userData } = location.state || {};
 
-  console.log("user data in medicines", userData);
   useEffect(() => {
-    setMedicines(output100);
-    setFilteredMedicines(output100);
-
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) setCart(new Map(JSON.parse(savedCart)));
-
     if (cartSaved) {
       const savedCartMap = new Map(cartSaved.map((item) => [item.id, item]));
       setCart(savedCartMap);
+    } else {
+      const savedCart = localStorage.getItem("cart");
+      if (savedCart) setCart(new Map(JSON.parse(savedCart)));
     }
   }, [cartSaved]);
 
@@ -64,21 +60,28 @@ const MedicinePage = () => {
     navigate("/cart", { state: { cart: cartArray, userData } });
   };
 
+  // Improved search function with debouncing
+  const debouncedSearch = useCallback(
+    debounce((value) => {
+      setFilteredMedicines(
+        medicines.filter((medicine) =>
+          medicine.name.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+      setCurrentPage(1);
+    }, 300),
+    [medicines]
+  );
+
   const handleSearch = (e) => {
-    const value = e.target.value.toLowerCase();
+    const value = e.target.value;
     setSearchTerm(value);
-    const filtered = medicines.filter((medicine) =>
-      medicine.name.toLowerCase().includes(value)
-    );
-    setFilteredMedicines(filtered);
-    setCurrentPage(1);
+    debouncedSearch(value);
   };
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentMedicines = filteredMedicines.slice(
-    indexOfFirstItem,
-    indexOfLastItem
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
   );
 
   return (
@@ -89,31 +92,31 @@ const MedicinePage = () => {
         placeholder="Search for a medicine..."
         value={searchTerm}
         onChange={handleSearch}
-        // style={{ marginBottom: "20px", padding: "10px", width: "100%" }}
         className="search"
       />
       <div className="medicine-list">
         {currentMedicines.map((medicine) => {
-          const cartItem = cart.get(medicine.id) || {};
-          const quantity = cartItem.quantity || 0;
+          const quantity = cart.get(medicine.id)?.quantity || 0;
 
           return (
             <div key={medicine.id} className="medicine-item">
               <h2>{medicine.name}</h2>
               <p>Price: Rs {medicine.price}</p>
-              {quantity > 0 ? (
-                <div className="quantity-controls">
-                  <button onClick={() => handleRemoveFromCart(medicine)}>
-                    -
+              <div className="quantity-controls">
+                {quantity > 0 ? (
+                  <>
+                    <button onClick={() => handleRemoveFromCart(medicine)}>
+                      -
+                    </button>
+                    <span>{quantity}</span>
+                    <button onClick={() => handleAddToCart(medicine)}>+</button>
+                  </>
+                ) : (
+                  <button onClick={() => handleAddToCart(medicine)}>
+                    Add to Cart
                   </button>
-                  <span>{quantity}</span>
-                  <button onClick={() => handleAddToCart(medicine)}>+</button>
-                </div>
-              ) : (
-                <button onClick={() => handleAddToCart(medicine)}>
-                  Add to Cart
-                </button>
-              )}
+                )}
+              </div>
             </div>
           );
         })}
@@ -124,7 +127,6 @@ const MedicinePage = () => {
         page={currentPage}
         onChange={handlePageChange}
         color="primary"
-        style={{ marginTop: "20px", display: "flex", justifyContent: "center" }}
         sx={{
           "& .MuiPaginationItem-root": {
             color: "black",
@@ -138,15 +140,15 @@ const MedicinePage = () => {
           "& .MuiPaginationItem-ellipsis": {
             color: "#888",
           },
+          mt: 2,
+          display: "flex",
+          justifyContent: "center",
         }}
       />
 
-      <button
-        onClick={handleCheckout}
-        style={{ marginTop: "20px", padding: "10px 20px", cursor: "pointer" }}
-      >
+      <button onClick={handleCheckout} className="checkout-button">
         Go to Cart (
-        {Array.from(cart.values()).reduce((a, b) => a + b.quantity, 0)})
+        {Array.from(cart.values()).reduce((a, b) => a + b.quantity, 0)} items)
       </button>
     </div>
   );

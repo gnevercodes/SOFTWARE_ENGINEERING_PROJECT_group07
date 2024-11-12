@@ -1,5 +1,5 @@
 // Updated CartPage.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styling/cart.css";
 
@@ -18,7 +18,7 @@ const CartPage = () => {
     const totalPrice = cart
       .reduce((acc, item) => acc + item.price * item.quantity, 0)
       .toFixed(2);
-    navigate("/checkout-confirmation", {
+    navigate("/payment", {
       state: { cart, userData, totalPrice },
     });
   };

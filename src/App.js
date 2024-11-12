@@ -25,6 +25,12 @@ import AdminDoctors from "./frontend/components/adminDoctors.js";
 import AdminBloodDonors from "./frontend/components/admonBD.js";
 import AdminLogin from "./frontend/components/adminLogin.js";
 import CheckoutConfirmation from "./frontend/components/chcekoutConfirmation.js";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import PaymentForm from "./frontend/components/PaymentForm.js";
+const stripePromise = loadStripe(
+  "pk_test_51QK38OInmpkINd3bGp6yhx3zU43xMOxwRFF9U3M5N4qHDX2cYVJpaAeEUQ50Xw1nnf2a2HsEEV4GTAOdVqgmHu7A00wQqaOwj9"
+);
 
 function App() {
   return (
@@ -35,6 +41,18 @@ function App() {
 
     <Router>
       <Routes>
+        <Route
+          path="/payment"
+          element={
+            <Elements stripe={stripePromise}>
+              <PaymentForm
+                // amount
+                // userData
+                onSuccess={() => alert("Payment Successful!")}
+              />
+            </Elements>
+          }
+        />
         {/* <Route path="/" element={<MedicalLandingPage />} /> */}
         <Route path="/" element={<RoleSelection />} />
         <Route path="/PatientLanding" element={<MedicalLandingPage />} />
