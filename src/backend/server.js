@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 mongoose
   .connect(
     "mongodb+srv://gnevercodes:seproject@softwareengineeringdb.xli4x.mongodb.net/mydatabase?retryWrites=true&w=majority",
-    { useNe3wUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connected to MongoDB successfully!"))
   .catch((error) => console.error("Failed to connect to MongoDB:", error));
