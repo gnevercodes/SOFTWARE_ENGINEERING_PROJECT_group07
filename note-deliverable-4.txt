@@ -1,0 +1,1 @@
+our deliverable 4 files(meeting minutes and documentation file) are being kept  in our git directory under the name Deliverable-1
