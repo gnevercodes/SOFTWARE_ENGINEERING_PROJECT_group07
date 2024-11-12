@@ -138,7 +138,7 @@ const MainContent = ({ userData, greeting }) => {
     if (!userData) {
       navigate(`/login`);
     } else {
-      navigate("/userAppointments", { state: { userData } });
+      navigate("/docAppointment", { state: { userData } });
     }
   };
 
