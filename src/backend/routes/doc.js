@@ -1,5 +1,4 @@
 const express = require("express");
-const bcrypt = require("bcrypt");
 const Doctor = require("../models/doc");
 
 const router = express.Router();
@@ -19,20 +18,16 @@ router.post("/api/doctor/signup", async (req, res) => {
       qualifications,
       experience,
       clinicAddress,
-      // availability,
       bloodDonor,
       emergencyName,
       emergencyPhone,
     } = req.body;
 
-    // Hash the password before saving
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create a new Doctor
+    // Create a new Doctor without hashing the password
     const newDoctor = new Doctor({
       name,
       email,
-      password: hashedPassword,
+      password, 
       phoneNumber,
       birthDate,
       specialty,
@@ -40,7 +35,6 @@ router.post("/api/doctor/signup", async (req, res) => {
       qualifications,
       experience,
       clinicAddress,
-      // availability,
       bloodDonor,
       emergencyContact: {
         name: emergencyName,
@@ -67,13 +61,10 @@ router.post("/api/doctorLogin", async (req, res) => {
       return res.status(400).json({ error: "Invalid email or password." });
     }
 
-    // Check the password
-    const isPasswordValid = await bcrypt.compare(password, doctor.password);
-    if (!isPasswordValid) {
+    if (password !== doctor.password) {
       return res.status(400).json({ error: "Invalid email or password." });
     }
 
-    // If successful, respond with doctor information
     res.json({
       message: "Login successful",
       doctor: {
@@ -88,6 +79,31 @@ router.post("/api/doctorLogin", async (req, res) => {
   }
 });
 
+router.delete("/api/doctors/:doctorId", async (req, res) => {
+  const { doctorId } = req.params;
+  console.log("called");
+  try {
+    // Find and delete the doctor
+    const doctor = await Doctor.findByIdAndDelete(doctorId);
+
+    if (!doctor) {
+      return res.status(404).json({ error: "Doctor not found." });
+    }
+
+    res.json({
+      message: "Doctor deleted successfully.",
+      deletedDoctor: {
+        id: doctor._id,
+        name: doctor.name,
+        email: doctor.email,
+        specialty: doctor.specialty,
+      },
+    });
+  } catch (error) {
+    console.error("Error deleting doctor:", error);
+    res.status(500).json({ error: "Failed to delete doctor." });
+  }
+});
 router.post("/api/doctor/login", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -96,8 +112,8 @@ router.post("/api/doctor/login", async (req, res) => {
       return res.status(400).json({ error: "Doctor not found." });
     }
 
-    const isPasswordValid = await bcrypt.compare(password, doctor.password);
-    if (!isPasswordValid) {
+    // Compare plaintext passwords
+    if (password !== doctor.password) {
       return res.status(400).json({ error: "Invalid email or password." });
     }
 
@@ -107,6 +123,7 @@ router.post("/api/doctor/login", async (req, res) => {
   }
 });
 
+// Get All Doctors
 router.get("/api/doctors", async (req, res) => {
   try {
     const doctors = await Doctor.find();
