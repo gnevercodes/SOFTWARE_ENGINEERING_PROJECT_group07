@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dd7450cd.css",
+    "main.js": "/static/js/main.b4bea410.js",
+    "static/js/453.f26b1892.chunk.js": "/static/js/453.f26b1892.chunk.js",
+    "static/media/docVisit.png": "/static/media/docVisit.f8844395981e2e0f0266.png",
+    "static/media/docAppointment.png": "/static/media/docAppointment.5f330cd34cbd81613915.png",
+    "static/media/docNew.png": "/static/media/docNew.4837ae4c9ef551d87693.png",
+    "static/media/doctors.png": "/static/media/doctors.a7c74ab05378c80c585f.png",
+    "static/media/appointment.png": "/static/media/appointment.5a4ab126d0107071033d.png",
+    "static/media/order medicines.png": "/static/media/order medicines.9e75da33cd2690276ea5.png",
+    "static/media/bloodDonate1.png": "/static/media/bloodDonate1.59095387f1142d7fa6dc.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "static/media/calendar-user-svgrepo-com.svg": "/static/media/calendar-user-svgrepo-com.c79826da6894244e34603350e272d6c2.svg",
+    "main.dd7450cd.css.map": "/static/css/main.dd7450cd.css.map",
+    "main.b4bea410.js.map": "/static/js/main.b4bea410.js.map",
+    "453.f26b1892.chunk.js.map": "/static/js/453.f26b1892.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd7450cd.css",
+    "static/js/main.b4bea410.js"
+  ]
+}
