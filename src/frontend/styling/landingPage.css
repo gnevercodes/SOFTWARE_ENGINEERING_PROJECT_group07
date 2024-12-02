@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.active {
+  color: #ffd700;
+  font-weight: bold;
+  border-bottom: 2px solid #ffd700;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  height: 400px;
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.carousel-container {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Services Section */
+.services {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.service-item {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonial Section */
+.testimonials {
+  padding: 40px 20px;
+  background-color: #e8f5e9;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item {
+  border-left: 4px solid #007bff;
+  padding: 15px 20px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+/* Buttons */
+.appointment-button,
+.buy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.loginBut {
+  background-color: #ffd700;
+  color: rgb(31, 31, 31);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.appointment-button:hover,
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+  background: #000000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .service-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .appointment-button,
+  .buy-button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .nav-links li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .appointment-button,
+  .buy-button,
+  .loginBut {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 15px;
+  }
+
+  .footer a {
+    font-size: 0.8rem;
+  }
+}
