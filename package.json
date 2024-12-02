@@ -2,6 +2,8 @@
   "name": "emed",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",
+
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -21,8 +23,8 @@
     "@mui/icons-material": "^5.15.7",
     "@mui/material": "^5.15.7",
     "@mui/styled-engine-sc": "^6.0.0-alpha.14",
-    "@stripe/react-stripe-js": "^2.9.0",
-    "@stripe/stripe-js": "^4.10.0",
+    "@stripe/react-stripe-js": "^3.0.0",
+    "@stripe/stripe-js": "^5.2.0",
     "@tabler/icons-react": "^2.47.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -46,6 +48,7 @@
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.11.0",
+    "stripe": "^17.4.0",
     "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
