@@ -28,6 +28,7 @@ import CheckoutConfirmation from "./frontend/components/chcekoutConfirmation.js"
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./frontend/components/PaymentForm.js";
+import UserOrders from "./frontend/components/userOrders.js";
 const stripePromise = loadStripe(
   "pk_test_51QK38OInmpkINd3bGp6yhx3zU43xMOxwRFF9U3M5N4qHDX2cYVJpaAeEUQ50Xw1nnf2a2HsEEV4GTAOdVqgmHu7A00wQqaOwj9"
 );
@@ -75,6 +76,8 @@ function App() {
         <Route path="/docSignup" element={<DoctorSignup />} />
         <Route path="/card" element={<Card />} />
         <Route path="/medicines" element={<MedicinePage />} />
+        <Route path="/userOrders" element={<UserOrders />} />
+
         <Route path="/userAppointments" element={<UserAppointments />} />
         <Route path="/docDocAppointments" element={<DocDoctorAppointments />} />
 
@@ -83,6 +86,10 @@ function App() {
       </Routes>
     </Router>
   );
+}
+
+function NotFound() {
+  return <h1>404: Page Not Found</h1>;
 }
 
 export default App;
