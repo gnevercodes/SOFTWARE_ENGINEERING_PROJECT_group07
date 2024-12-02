@@ -1,0 +1,112 @@
+/* Container */
+.appointment-container {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  transition: transform 0.3s;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  color: #00796b;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.success-message {
+  font-size: 24px;
+  color: #388e3c;
+  text-align: center;
+}
+
+input,
+select {
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 8px;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+/* Buttons */
+.book-button {
+  margin-top: 30px;
+  background-color: #009688;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.book-button:hover {
+  background-color: #00796b;
+  box-shadow: 0 8px 15px rgba(0, 150, 136, 0.3);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .appointment-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .success-message {
+    font-size: 20px;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .book-button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .viewAppointments-btn {
+    height: 80px;
+    width: 80px;
+    transform: translateY(70px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .viewAppointments-btn:hover {
+    background-color: #00796b;
+  }
+}

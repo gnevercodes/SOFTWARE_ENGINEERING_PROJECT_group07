@@ -1,0 +1,273 @@
+/* General Page Styling */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Container Styling */
+.admin-users-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-users-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.error-message {
+  color: #ff4d4f;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Cards Container */
+.user-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.delete-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  color: darkred;
+}
+/* Card Styling */
+.user-card {
+  position: relative;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 320px;
+  height: 280px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.user-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-front {
+  background: white;
+}
+
+.card-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.card-front h3,
+.card-back h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-front p,
+.card-back li {
+  font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-back li {
+  margin-bottom: 8px;
+  color: black;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.notification-badge::after {
+  content: "!";
+  font-weight: bold;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.modal-content textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-buttons button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Reply Button Styling */
+.reply-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.reply-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-card {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .card-front h3,
+  .card-back h3 {
+    font-size: 18px;
+  }
+
+  .card-front p,
+  .card-back li {
+    font-size: 13px;
+  }
+
+  .notification-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-front h3,
+  .card-back h3 {
+    font-size: 16px;
+  }
+
+  .card-front p,
+  .card-back li {
+    font-size: 12px;
+  }
+
+  .notification-badge {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+}
