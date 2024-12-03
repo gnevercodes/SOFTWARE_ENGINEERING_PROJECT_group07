@@ -71,7 +71,7 @@ const DoctorLandingPage = () => {
       console.log(doctor._id);
       try {
         const response = await axios.get(
-          `https://emedical-backend.onrender.com/api/appointments/doctor/${doctor.doctor._id}`
+          `https://emedical-backend-3ke1.onrender.com/api/appointments/doctor/${doctor.doctor._id}`
         );
         const appointments = response.data;
         console.log(response.data);

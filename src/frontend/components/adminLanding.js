@@ -19,7 +19,7 @@ const AdminLandingPage = () => {
     const fetchMetrics = async () => {
       try {
         const response = await axios.get(
-          "https://emedical-backend.onrender.com/api/admin/metrics"
+          "https://emedical-backend-3ke1.onrender.com/api/admin/metrics"
         );
         setMetrics(response.data);
       } catch (error) {

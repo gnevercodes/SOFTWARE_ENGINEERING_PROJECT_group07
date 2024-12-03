@@ -43,7 +43,7 @@ const UserAppointments = () => {
     try {
       // API call to save the review
       await axios.post(
-        `https://emedical-backend.onrender.com/api/appointments/${selectedAppointment._id}/review`,
+        `https://emedical-backend-3ke1.onrender.com/api/appointments/${selectedAppointment._id}/review`,
         {
           review: reviewText,
           rating,
@@ -77,7 +77,7 @@ const UserAppointments = () => {
     const fetchAppointments = async () => {
       try {
         const response = await axios.get(
-          `https://emedical-backend.onrender.com/api/appointments/user/${userData?._id}`
+          `https://emedical-backend-3ke1.onrender.com/api/appointments/user/${userData?._id}`
         );
         setAppointments(response.data);
       } catch (error) {
@@ -106,7 +106,7 @@ const UserAppointments = () => {
 
     try {
       await axios.put(
-        `https://emedical-backend.onrender.com/api/appointments/${appointmentId}/cancel`,
+        `https://emedical-backend-3ke1.onrender.com/api/appointments/${appointmentId}/cancel`,
         { status: "Cancelled", notes: cancellationNote }
       );
 

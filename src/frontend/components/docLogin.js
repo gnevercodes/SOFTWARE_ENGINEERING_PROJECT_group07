@@ -28,7 +28,7 @@ const DoctorLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://emedical-backend.onrender.com/api/doctor/login",
+        "https://emedical-backend-3ke1.onrender.com/api/doctor/login",
         loginDetails
       );
       setSuccessMessage(response.data.message);

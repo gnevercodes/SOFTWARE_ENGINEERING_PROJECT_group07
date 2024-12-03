@@ -22,7 +22,7 @@ const DocDoctorAppointments = () => {
     const fetchAppointments = async () => {
       try {
         const response = await axios.get(
-          `https://emedical-backend.onrender.com/api/appointments/doctor/${doctor.doctor._id}`
+          `https://emedical-backend-3ke1.onrender.com/api/appointments/doctor/${doctor.doctor._id}`
         );
         const appointments = response.data;
 
@@ -30,7 +30,7 @@ const DocDoctorAppointments = () => {
           appointments.map(async (appointment) => {
             try {
               const reviewResponse = await axios.get(
-                `https://emedical-backend.onrender.com/api/reviews/${appointment._id}`
+                `https://emedical-backend-3ke1.onrender.com/api/reviews/${appointment._id}`
               );
               return {
                 ...appointment,
@@ -73,7 +73,7 @@ const DocDoctorAppointments = () => {
 
     try {
       await axios.put(
-        `https://emedical-backend.onrender.com/api/appointments/${appointmentId}/cancel`,
+        `https://emedical-backend-3ke1.onrender.com/api/appointments/${appointmentId}/cancel`,
         { status: "Cancelled", notes: cancellationNote }
       );
 

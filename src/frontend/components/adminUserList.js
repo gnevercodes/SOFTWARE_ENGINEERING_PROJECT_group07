@@ -16,7 +16,7 @@ const AdminUsers = () => {
     const fetchUsersAndMessages = async () => {
       try {
         const userResponse = await axios.get(
-          "https://emedical-backend.onrender.com/api/users"
+          "https://emedical-backend-3ke1.onrender.com/api/users"
         );
         const users = userResponse.data;
 
@@ -24,7 +24,7 @@ const AdminUsers = () => {
           users.map(async (user) => {
             try {
               const issuesResponse = await axios.get(
-                `https://emedical-backend.onrender.com/api/issues/user/${user._id}`
+                `https://emedical-backend-3ke1.onrender.com/api/issues/user/${user._id}`
               );
               const hasNewMessages = issuesResponse.data.some(
                 (issue) => !issue.isRead
@@ -51,7 +51,7 @@ const AdminUsers = () => {
     if (!flippedCards[userId]) {
       try {
         await axios.patch(
-          `https://emedical-backend.onrender.com/api/issues/user/${userId}/mark-read`
+          `https://emedical-backend-3ke1.onrender.com/api/issues/user/${userId}/mark-read`
         );
         setRefreshData((prev) => !prev);
       } catch (error) {}
@@ -73,7 +73,7 @@ const AdminUsers = () => {
 
     try {
       await axios.post(
-        `https://emedical-backend.onrender.com/api/issues/${activeUserId}/messages`,
+        `https://emedical-backend-3ke1.onrender.com/api/issues/${activeUserId}/messages`,
         {
           sender: "admin",
           message: replyMessage,
@@ -92,7 +92,7 @@ const AdminUsers = () => {
     if (confirmDelete) {
       try {
         await axios.delete(
-          `https://emedical-backend.onrender.com/api/users/${userId}`
+          `https://emedical-backend-3ke1.onrender.com/api/users/${userId}`
         );
         setRefreshData((prev) => !prev);
         alert("User deleted successfully!");

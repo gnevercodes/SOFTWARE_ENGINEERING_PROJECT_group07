@@ -24,7 +24,7 @@ const PaymentForm = () => {
       const {
         data: { clientSecret },
       } = await axios.post(
-        "https://emedical-backend.onrender.com/api/create-payment-intent",
+        "https://emedical-backend-3ke1.onrender.com/api/create-payment-intent",
         { amount },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -66,9 +66,13 @@ const PaymentForm = () => {
           userData: userData,
         };
 
-        await axios.post("https://emedical-backend.onrender.com/api/orders", orderData, {
-          headers: { "Content-Type": "application/json" },
-        });
+        await axios.post(
+          "https://emedical-backend-3ke1.onrender.com/api/orders",
+          orderData,
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
 
         setTimeout(() => {
           navigate("/landing", { state: { userData } });

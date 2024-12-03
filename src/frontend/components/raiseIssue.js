@@ -15,7 +15,7 @@ const RaiseIssueModal = ({ userData, onClose }) => {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          `https://emedical-backend.onrender.com/api/issues/user/${userData._id}`
+          `https://emedical-backend-3ke1.onrender.com/api/issues/user/${userData._id}`
         );
         setMessages(response.data[0]?.messages || []);
       } catch (error) {
@@ -41,7 +41,7 @@ const RaiseIssueModal = ({ userData, onClose }) => {
 
     try {
       const response = await axios.post(
-        "https://emedical-backend.onrender.com/api/issues",
+        "https://emedical-backend-3ke1.onrender.com/api/issues",
         {
           user: userData._id,
           email: userData.email,

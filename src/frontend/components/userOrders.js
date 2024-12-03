@@ -13,7 +13,7 @@ const UserOrders = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `https://emedical-backend.onrender.com/api/orders/${userData._id}`
+          `https://emedical-backend-3ke1.onrender.com/api/orders/${userData._id}`
         );
         setOrders(response.data);
       } catch (error) {

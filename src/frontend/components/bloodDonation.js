@@ -16,7 +16,7 @@ const BloodDonation = () => {
     const fetchBloodDonors = async () => {
       try {
         const response = await axios.get(
-          "https://emedical-backend.onrender.com/api/bloodDonors"
+          "https://emedical-backend-3ke1.onrender.com/api/bloodDonors"
         );
 
         // Filter out users with null userId and exclude the current user

@@ -35,7 +35,7 @@ const DoctorAppointment = () => {
   const loadDoctors = async () => {
     try {
       const response = await axios.get(
-        "https://emedical-backend.onrender.com/api/doctors"
+        "https://emedical-backend-3ke1.onrender.com/api/doctors"
       );
       setDoctorsList(response.data);
     } catch (error) {
@@ -48,7 +48,7 @@ const DoctorAppointment = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        "https://emedical-backend.onrender.com/api/appointments",
+        "https://emedical-backend-3ke1.onrender.com/api/appointments",
         formData
       );
       console.log("Appointment booked successfully:", response.data);

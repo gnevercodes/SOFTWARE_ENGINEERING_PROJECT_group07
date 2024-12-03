@@ -34,7 +34,7 @@ const DoctorSignup = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://emedical-backend.onrender.com/api/doctor/signup",
+        "https://emedical-backend-3ke1.onrender.com/api/doctor/signup",
         signupDetails
       );
       setSuccessMessage("Signup successful! Redirecting to login...");

@@ -12,7 +12,7 @@ const AdminDoctors = () => {
     const fetchDoctors = async () => {
       try {
         const response = await axios.get(
-          "https://emedical-backend.onrender.com/api/doctors"
+          "https://emedical-backend-3ke1.onrender.com"
         );
         setDoctors(response.data);
       } catch (error) {
@@ -34,7 +34,7 @@ const AdminDoctors = () => {
 
     try {
       await axios.delete(
-        `https://emedical-backend.onrender.com/api/doctors/${doctorId}`
+        `https://emedical-backend-3ke1.onrender.com/api/doctors/${doctorId}`
       );
       setDoctors((prevDoctors) =>
         prevDoctors.filter((doctor) => doctor._id !== doctorId)
