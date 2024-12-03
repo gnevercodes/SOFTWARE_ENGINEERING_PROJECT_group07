@@ -52,7 +52,6 @@ router.post("/api/orders", async (req, res) => {
       subject: "Payment Confirmation",
       html: emailContent,
     });
-console.log(transpoter,"transpoter")
     const savedOrder = await newOrder.save();
     res.status(201).json(savedOrder);
   } catch (error) {
