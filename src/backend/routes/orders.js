@@ -47,7 +47,7 @@ router.post("/api/orders", async (req, res) => {
     `;
 
     await transporter.sendMail({
-      from: "kalyanraju90@gmail.com",
+      from: "gnevercodes@gmail.com",
       to: userData?.email,
       subject: "Payment Confirmation",
       html: emailContent,
